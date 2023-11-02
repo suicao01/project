@@ -51,7 +51,7 @@ public class DictionaryManagement extends Dictionary1 {
         for (String i : getWordList().keySet()){
             if (i.equals(word)){
                 Word newWords = getWordList().get(i);
-                return newWords.getWord_explain();
+                return newWords.getWord_target() + "\n" + newWords.getWord_explain();
             }
         }
         return null;
