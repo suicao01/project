@@ -11,9 +11,9 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("l.fxml")));
         stage.setTitle("Dictionary");
-        stage.setWidth(748);
+        stage.setWidth(756); // kich thuoc cua so
         stage.setHeight(506);
-        stage.setResizable(false);
+        stage.setResizable(false); // co dinh kich thuoc
         Scene scene = new Scene(root,800,400);
         String css = Objects.requireNonNull(this.getClass().getResource("test.css")).toExternalForm();
         scene.getStylesheets().add(css);

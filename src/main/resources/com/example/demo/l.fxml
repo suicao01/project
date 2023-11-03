@@ -39,6 +39,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -46,39 +50,160 @@
 
    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
       <children>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#21cbffb2" height="453.0" layoutX="-1.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" width="138.0" />
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" layoutX="-1.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="756.0" />
-         <TextField fx:id="search" layoutX="157.0" layoutY="13.0" onAction="#findWord" prefHeight="31.0" prefWidth="235.0" promptText="Type here to search">
-            <font>
-               <Font size="18.0" />
-            </font></TextField>
-         <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="401.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@1024px-Search_Icon.svg.png" />
-            </image>
-         </ImageView>
-         <Label fx:id="meaning" layoutX="148.0" layoutY="71.0" text="Meaning:">
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="506.0" layoutX="-5.0" stroke="BLACK" strokeType="INSIDE" width="756.0">
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.11999999731779099" green="0.6579110622406006" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="437.0" layoutX="77.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="662.0" />
+         <Label fx:id="meaning" layoutX="325.0" layoutY="79.0" prefHeight="417.0" prefWidth="404.0">
             <font>
                <Font size="15.0" />
             </font>
          </Label>
-         <AnchorPane fx:id="ScenePane" layoutY="50.0" prefHeight="339.0" prefWidth="179.0">
+         <TextField fx:id="search" layoutX="209.0" layoutY="13.0" onAction="#findWord" prefHeight="39.0" prefWidth="291.0" promptText="Type here to search">
+            <font>
+               <Font size="18.0" />
+            </font></TextField>
+         <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="510.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@1024px-Search_Icon.svg.png" />
+            </image>
+         </ImageView>
+         <AnchorPane fx:id="ScenePane" layoutY="87.0" prefHeight="339.0" prefWidth="179.0">
             <children>
-               <Button fx:id="export_to_file" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Word Editing" textAlignment="CENTER">
+               <Button fx:id="export_to_file" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
                </Button>
-               <Button fx:id="update" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Update" />
-               <Button fx:id="game" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Game" />
-               <Button fx:id="exit" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="116.0" text="Exit" />
-               <Button fx:id="export_to_file1" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Search Words" textAlignment="CENTER">
+               <Button fx:id="update" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " />
+               <Button fx:id="game" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " />
+               <Button fx:id="exit" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="56.0" text=" " />
+               <Button fx:id="export_to_file1" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
                </Button>
+               <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="21.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@1024px-Search_Icon.svg.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="47.0" fitWidth="56.0" layoutX="13.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@icon_add_word.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="13.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@icon_game.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="13.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@icon_history.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="39.0" fitWidth="37.0" layoutX="18.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@icon_exit.png" />
+                  </image>
+               </ImageView>
             </children>
          </AnchorPane>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fb4ff" height="385.0" layoutX="93.0" layoutY="106.0" opacity="0.27" strokeType="INSIDE" width="224.0">
+            <stroke>
+               <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </RadialGradient>
+            </stroke>
+         </Rectangle>
+         <ImageView fitHeight="161.0" fitWidth="139.0" layoutX="612.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@icon_doraemon_lookup.png" />
+            </image>
+         </ImageView>
+         <Label layoutX="77.0" layoutY="16.0" text="Dictionary" textFill="WHITE">
+            <font>
+               <Font name="System Bold Italic" size="23.0" />
+            </font>
+         </Label>
+         <ImageView fitHeight="103.0" fitWidth="124.0" layoutX="-5.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="667.0573272705078">
+            <image>
+               <Image url="@doraemon_read_book.png" />
+            </image>
+         </ImageView>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="328.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="297.0">
+            <fill>
+               <LinearGradient endX="0.9219858156028369" endY="1.0" startX="0.9101654846335697">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.0117647061124444" green="0.6352941393852234" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Label layoutX="346.0" layoutY="85.0" text="Định nghĩa" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="93.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="224.0">
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0" startX="0.9645390070921985">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.0117647061124444" green="0.6352941393852234" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Label layoutX="110.0" layoutY="85.0" text="Kết quả liên quan" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
       </children>
    </AnchorPane>
 </VBox>
