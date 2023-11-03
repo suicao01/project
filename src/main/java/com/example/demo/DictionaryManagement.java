@@ -57,6 +57,17 @@ public class DictionaryManagement extends Dictionary1 {
         return null;
     }
 
+    // return tu tieng anh dc tra
+    public String getWordLookedUp(String word) {
+        for (String i : getWordList().keySet()){
+            if (i.equals(word)){
+                Word newWords = getWordList().get(i);
+                return newWords.getWord_target();
+            }
+        }
+        return null;
+    }
+
     public void deleteWord (String word) {
         getWordList().remove(word);
     }

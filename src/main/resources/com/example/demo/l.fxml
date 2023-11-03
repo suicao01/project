@@ -45,6 +45,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller">
 
@@ -69,9 +70,9 @@
             </fill>
          </Rectangle>
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="437.0" layoutX="77.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="662.0" />
-         <Label fx:id="meaning" layoutX="325.0" layoutY="79.0" prefHeight="417.0" prefWidth="404.0">
+         <Label fx:id="meaning" layoutX="328.0" layoutY="130.0" prefHeight="31.0" prefWidth="401.0" text="word" textFill="#0077ff">
             <font>
-               <Font size="15.0" />
+               <Font name="System Bold" size="23.0" />
             </font>
          </Label>
          <TextField fx:id="search" layoutX="209.0" layoutY="13.0" onAction="#findWord" prefHeight="39.0" prefWidth="291.0" promptText="Type here to search">
@@ -85,44 +86,54 @@
          </ImageView>
          <AnchorPane fx:id="ScenePane" layoutY="87.0" prefHeight="339.0" prefWidth="179.0">
             <children>
-               <Button fx:id="export_to_file" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
+               <Button fx:id="export_to_file1" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
+                  <graphic>
+                     <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@1024px-Search_Icon.svg.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
                </Button>
-               <Button fx:id="update" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " />
-               <Button fx:id="game" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " />
-               <Button fx:id="exit" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="56.0" text=" " />
-               <Button fx:id="export_to_file1" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
+               <Button fx:id="export_to_file" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
+                  <graphic>
+                     <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_add_word.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
                </Button>
-               <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="21.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@1024px-Search_Icon.svg.png" />
-                  </image>
-               </ImageView>
-               <ImageView fitHeight="47.0" fitWidth="56.0" layoutX="13.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@icon_add_word.png" />
-                  </image>
-               </ImageView>
-               <ImageView fitHeight="39.0" fitWidth="47.0" layoutX="13.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@icon_game.png" />
-                  </image>
-               </ImageView>
-               <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="13.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@icon_history.png" />
-                  </image>
-               </ImageView>
-               <ImageView fitHeight="39.0" fitWidth="37.0" layoutX="18.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@icon_exit.png" />
-                  </image>
-               </ImageView>
+               <Button fx:id="update" contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" ">
+                  <graphic>
+                     <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_history.png" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+               <Button fx:id="game" contentDisplay="CENTER" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" ">
+                  <graphic>
+                     <ImageView fitHeight="35.0" fitWidth="39.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_game.png" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+               <Button fx:id="exit" contentDisplay="CENTER" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="56.0" text=" ">
+                  <graphic>
+                     <ImageView fitHeight="37.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_exit.png" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
             </children>
          </AnchorPane>
          <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fb4ff" height="385.0" layoutX="93.0" layoutY="106.0" opacity="0.27" strokeType="INSIDE" width="224.0">
@@ -158,7 +169,7 @@
                <Image url="@doraemon_read_book.png" />
             </image>
          </ImageView>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="328.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="297.0">
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="328.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="179.0">
             <fill>
                <LinearGradient endX="0.9219858156028369" endY="1.0" startX="0.9101654846335697">
                   <stops>
@@ -204,6 +215,57 @@
                <Font name="System Bold" size="24.0" />
             </font>
          </Label>
+         <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="513.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="56.0">
+            <fill>
+               <LinearGradient endX="0.9219858156028369" endY="1.0" startX="0.9101654846335697">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.0117647061124444" green="0.6352941393852234" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <ImageView fitHeight="35.0" fitWidth="31.0" layoutX="526.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@icon_sua.png" />
+            </image>
+         </ImageView>
+         <Rectangle accessibleRole="BUTTON" arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="575.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="56.0">
+            <fill>
+               <LinearGradient endX="0.9219858156028369" endY="1.0" startX="0.9101654846335697">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.0117647061124444" green="0.6352941393852234" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="588.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@icon_bin.png" />
+            </image>
+         </ImageView>
+         <Text fx:id="textMeaning" layoutX="331.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Text>
       </children>
    </AnchorPane>
 </VBox>
