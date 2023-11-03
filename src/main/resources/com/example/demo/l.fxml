@@ -39,38 +39,46 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller">
 
-   <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
       <children>
-         <TextField fx:id="search" layoutX="259.0" layoutY="60.0" onAction="#findWord" prefHeight="31.0" prefWidth="235.0" promptText="Type here to search">
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#21cbffb2" height="453.0" layoutX="-1.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" width="138.0" />
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="65.0" layoutX="-1.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="756.0" />
+         <TextField fx:id="search" layoutX="157.0" layoutY="13.0" onAction="#findWord" prefHeight="31.0" prefWidth="235.0" promptText="Type here to search">
             <font>
                <Font size="18.0" />
             </font></TextField>
-         <AnchorPane fx:id="ScenePane" layoutY="-15.0" prefHeight="377.0" prefWidth="179.0">
-            <children>
-               <Button fx:id="export_to_file" layoutX="8.0" layoutY="112.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="174.0" text="Export to file">
-                  <font>
-                     <Font name="Arial" size="12.0" />
-                  </font>
-               </Button>
-               <Button fx:id="update" layoutX="8.0" layoutY="174.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="174.0" text="Update" />
-               <Button fx:id="game" layoutX="8.0" layoutY="236.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="174.0" text="Game" />
-               <Button fx:id="exit" layoutX="8.0" layoutY="293.0" mnemonicParsing="false" onAction="#Logout" prefHeight="46.0" prefWidth="174.0" text="Exit" />
-            </children>
-         </AnchorPane>
-         <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="501.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="31.0" fitWidth="41.0" layoutX="401.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@1024px-Search_Icon.svg.png" />
             </image>
          </ImageView>
-         <Label fx:id="meaning" layoutX="268.0" layoutY="110.0" text="Meaning:">
+         <Label fx:id="meaning" layoutX="148.0" layoutY="71.0" text="Meaning:">
             <font>
                <Font size="15.0" />
             </font>
          </Label>
+         <AnchorPane fx:id="ScenePane" layoutY="50.0" prefHeight="339.0" prefWidth="179.0">
+            <children>
+               <Button fx:id="export_to_file" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Word Editing" textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial" size="12.0" />
+                  </font>
+               </Button>
+               <Button fx:id="update" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Update" />
+               <Button fx:id="game" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Game" />
+               <Button fx:id="exit" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="116.0" text="Exit" />
+               <Button fx:id="export_to_file1" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="116.0" text="Search Words" textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial" size="12.0" />
+                  </font>
+               </Button>
+            </children>
+         </AnchorPane>
       </children>
    </AnchorPane>
 </VBox>

@@ -34,6 +34,7 @@ public class Controller {
         DictionaryManagement d = new DictionaryManagement();
         d.insertFile();
         String word = search.getText();
-        meaning.setText( d.dictionaryLookup(word));
+        //d.changeWord("love","Yen Ngoc");
+        meaning.setText("Meaning:\n" + d.dictionaryLookup(word));
     }
 }
