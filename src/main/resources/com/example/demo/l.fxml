@@ -86,7 +86,7 @@
          </ImageView>
          <AnchorPane fx:id="ScenePane" layoutY="87.0" prefHeight="339.0" prefWidth="179.0">
             <children>
-               <Button fx:id="export_to_file1" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
+               <Button fx:id="export_to_file1" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
@@ -98,27 +98,27 @@
                      </ImageView>
                   </graphic>
                </Button>
-               <Button fx:id="export_to_file" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" " textAlignment="CENTER">
+               <Button fx:id="export_to_file" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
                   <graphic>
-                     <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fitHeight="32.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@icon_add_word.png" />
                         </image>
                      </ImageView>
                   </graphic>
                </Button>
-               <Button fx:id="update" contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" ">
+               <Button fx:id="update" contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" ">
                   <graphic>
-                     <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                            <Image url="@icon_history.png" />
                         </image>
                      </ImageView>
                   </graphic></Button>
-               <Button fx:id="game" contentDisplay="CENTER" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="56.0" text=" ">
+               <Button fx:id="game" contentDisplay="CENTER" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" ">
                   <graphic>
                      <ImageView fitHeight="35.0" fitWidth="39.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -126,7 +126,7 @@
                         </image>
                      </ImageView>
                   </graphic></Button>
-               <Button fx:id="exit" contentDisplay="CENTER" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="56.0" text=" ">
+               <Button fx:id="exit" contentDisplay="CENTER" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="63.0" text=" ">
                   <graphic>
                      <ImageView fitHeight="37.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                         <image>
