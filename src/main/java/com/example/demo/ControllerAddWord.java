@@ -38,7 +38,7 @@ public class ControllerAddWord extends Controller {
 
         String res = "";
         res += "@" + newWord + " /" + phienAm +"/\n"
-        + "*  " + loaiTu + "\n- " + meaningOfNewWord +'\n';
+        + "*  " + loaiTu + "\n- " + meaningOfNewWord +'\n' +"n" +'\n';
 
         // ghi vao file dtb.txt
         try {
