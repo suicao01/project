@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,7 +26,8 @@ public class ControllerAddWord extends Controller {
     TextField meaningWordTextField;
     @FXML
     Button buttonSaveNewWord;
-
+    @FXML
+    Label notificationAddWordSuccess;
 
     public void saveNewWord(ActionEvent event) {
 
@@ -43,8 +45,12 @@ public class ControllerAddWord extends Controller {
             FileWriter fw = new FileWriter("dtb.txt", true);
             fw.write(res);
             fw.close();
+            notificationAddWordSuccess.setText("You add the word success!");
         } catch (Exception e) {
             System.out.println(e);
         }
+
+
+
     }
 }
