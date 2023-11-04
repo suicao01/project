@@ -47,7 +47,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller">
 
    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
       <children>
@@ -86,7 +86,7 @@
          </ImageView>
          <AnchorPane fx:id="ScenePane" layoutY="87.0" prefHeight="339.0" prefWidth="179.0">
             <children>
-               <Button fx:id="export_to_file1" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+               <Button fx:id="searchWord" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
@@ -98,7 +98,7 @@
                      </ImageView>
                   </graphic>
                </Button>
-               <Button fx:id="export_to_file" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+               <Button fx:id="add" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
@@ -110,7 +110,7 @@
                      </ImageView>
                   </graphic>
                </Button>
-               <Button fx:id="update" contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" ">
+               <Button fx:id="history" contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" onAction="#hisScreen" prefHeight="55.0" prefWidth="63.0" text=" ">
                   <graphic>
                      <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -136,7 +136,7 @@
                   </graphic></Button>
             </children>
          </AnchorPane>
-         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fb4ff" height="385.0" layoutX="93.0" layoutY="106.0" opacity="0.27" strokeType="INSIDE" width="224.0">
+         <Rectangle fx:id="relatedWord" arcHeight="5.0" arcWidth="5.0" fill="#1fb4ff" height="385.0" layoutX="93.0" layoutY="106.0" opacity="0.27" strokeType="INSIDE" width="224.0">
             <stroke>
                <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                   <stops>
@@ -187,7 +187,7 @@
                </LinearGradient>
             </fill>
          </Rectangle>
-         <Label layoutX="346.0" layoutY="85.0" text="Định nghĩa" textFill="WHITE">
+         <Label fx:id="function" layoutX="346.0" layoutY="85.0" text="Định nghĩa" textFill="WHITE">
             <font>
                <Font name="System Bold" size="24.0" />
             </font>
