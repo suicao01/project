@@ -57,7 +57,7 @@
                   <stops>
                      <Stop>
                         <color>
-                           <Color red="0.11999999731779099" green="0.6579110622406006" blue="1.0" />
+                           <Color red="0.12156862765550613" green="0.658823549747467" blue="1.0" />
                         </color>
                      </Stop>
                      <Stop offset="1.0">
@@ -86,7 +86,7 @@
          </ImageView>
          <AnchorPane fx:id="ScenePane" layoutY="87.0" prefHeight="339.0" prefWidth="179.0">
             <children>
-               <Button fx:id="export_to_file1" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+               <Button fx:id="export_to_file1" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>
@@ -98,7 +98,7 @@
                      </ImageView>
                   </graphic>
                </Button>
-               <Button fx:id="export_to_file" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+               <Button fx:id="export_to_file" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" onAction="#switchToSceneAddWord" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="12.0" />
                   </font>

@@ -2,6 +2,10 @@ package com.example.demo;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -13,6 +17,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
+
+    Scene scene;
+    Parent root;
 
     @FXML
     TextField search;
@@ -43,4 +50,19 @@ public class Controller {
         textMeaning.setText(d.dictionaryLookup(word));
     }
 
+    public void switchToSceneSearch(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("l.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToSceneAddWord(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("addWord.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

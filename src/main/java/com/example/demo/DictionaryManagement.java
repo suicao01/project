@@ -33,7 +33,7 @@ public class DictionaryManagement extends Dictionary1 {
                 }
                 if (line.charAt(0)=='@') {
                         target = line.substring(1, line.indexOf("/")-1);
-                        explain = (line.substring(line.indexOf("/"))+"\n");
+                        explain = (line.substring(line.indexOf("/"))  + '\n');
 
 
                 }
