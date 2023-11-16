@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HistoryController">
+   <children>
+      <VBox fx:id="vbox" prefHeight="400.0" prefWidth="640.0">
+      
+         <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
+            <children>
+               <Rectangle arcHeight="5.0" arcWidth="5.0" height="506.0" layoutX="-5.0" stroke="BLACK" strokeType="INSIDE" width="756.0">
+                  <fill>
+                     <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.11999999731779099" green="0.6579110622406006" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="1.0" green="1.0" blue="1.0" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </fill>
+               </Rectangle>
+               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="437.0" layoutX="77.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="662.0" />
+               <AnchorPane fx:id="ScenePane" layoutY="87.0" prefHeight="339.0" prefWidth="179.0">
+                  <children>
+                     <Button fx:id="searchWord" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+                        <font>
+                           <Font name="Arial" size="12.0" />
+                        </font>
+                        <graphic>
+                           <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@1024px-Search_Icon.svg.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button fx:id="add" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" onAction="#switchToSceneAddWord" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+                        <font>
+                           <Font name="Arial" size="12.0" />
+                        </font>
+                        <graphic>
+                           <ImageView fitHeight="32.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@icon_add_word.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" ">
+                        <graphic>
+                           <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@icon_history.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button fx:id="game" contentDisplay="CENTER" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="63.0" text=" ">
+                        <graphic>
+                           <ImageView fitHeight="35.0" fitWidth="39.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@icon_game.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                     <Button fx:id="exit" contentDisplay="CENTER" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="63.0" text=" ">
+                        <graphic>
+                           <ImageView fitHeight="37.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@icon_exit.png" />
+                              </image>
+                           </ImageView>
+                        </graphic>
+                     </Button>
+                  </children>
+               </AnchorPane>
+               <Label layoutX="316.0" layoutY="14.0" text="Dictionary" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold Italic" size="23.0" />
+                  </font>
+               </Label>
+               <ImageView fitHeight="103.0" fitWidth="124.0" layoutX="-5.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="667.0573272705078">
+                  <image>
+                     <Image url="@doraemon_read_book.png" />
+                  </image>
+               </ImageView>
+               <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="328.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="224.0">
+                  <fill>
+                     <LinearGradient endX="0.9219858156028369" endY="1.0" startX="0.9101654846335697">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.0117647061124444" green="0.6352941393852234" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="1.0" green="1.0" blue="1.0" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </fill>
+               </Rectangle>
+               <Label fx:id="function" layoutX="346.0" layoutY="85.0" text="Lịch sử tìm kiếm" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="24.0" />
+                  </font>
+               </Label>
+               <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="93.0" layoutY="83.0" stroke="BLACK" strokeType="INSIDE" width="224.0">
+                  <fill>
+                     <LinearGradient endX="1.0" endY="1.0" startX="0.9645390070921985">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.0117647061124444" green="0.6352941393852234" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="1.0" green="1.0" blue="1.0" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </fill>
+               </Rectangle>
+               <Label fx:id="showWord" layoutX="110.0" layoutY="85.0" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="24.0" />
+                  </font>
+               </Label>
+               <Pane layoutX="340.0" layoutY="143.0" prefHeight="339.0" prefWidth="328.0">
+                  <children>
+                     <ListView fx:id="listWord" layoutX="1.0" layoutY="3.0" prefHeight="339.0" prefWidth="296.0">
+                        <effect>
+                           <Glow />
+                        </effect>
+                     </ListView>
+                     <Label fx:id="noWordSearch" layoutX="14.0" layoutY="14.0">
+                        <font>
+                           <Font name="Arial" size="14.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </Pane>
+               <ImageView fitHeight="126.0" fitWidth="93.0" layoutX="641.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@hihi.jpg" />
+                  </image>
+               </ImageView>
+               <TextArea fx:id="definition" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" layoutX="93.0" layoutY="143.0" pickOnBounds="false" prefHeight="339.0" prefWidth="224.0" scaleShape="false" wrapText="true">
+                  <font>
+                     <Font name="Arial" size="14.0" />
+                  </font>
+               </TextArea>
+               <Button fx:id="deleteHis" layoutX="570.0" layoutY="78.0" minWidth="51.0" mnemonicParsing="false" onAction="#deleteHistory" pickOnBounds="false" prefHeight="35.0" prefWidth="51.0" text="Button">
+                  <graphic>
+                     <ImageView fitHeight="41.0" fitWidth="38.0" preserveRatio="true" smooth="false">
+                        <image>
+                           <Image url="@icon_bin.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+            </children>
+         </AnchorPane>
+      </VBox>
+   </children>
+</StackPane>
