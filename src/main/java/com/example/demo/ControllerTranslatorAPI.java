@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class ControllerTranslatorAPI extends Controller implements Initializable {
     @FXML
@@ -48,18 +50,18 @@ public class ControllerTranslatorAPI extends Controller implements Initializable
         }
 
      if( langTo.getSelectionModel().isSelected(0)){
-         setLangto1(event);
+         setLangto1();
      }
      else if (langTo.getSelectionModel().isSelected(1)) {
-         setLangto2(event);
+         setLangto2();
      }
      else if (langTo.getSelectionModel().isSelected(2)) {
-         setLangto3(event);
+         setLangto3();
      }
     }
 
 
-public void setLangto1(ActionEvent event) throws IOException {
+public void setLangto1() throws IOException {
         langTo.getSelectionModel().select(tab2);
         Translator translator = new Translator();
         if (!wordFind.getText().isEmpty()) {
@@ -68,7 +70,7 @@ public void setLangto1(ActionEvent event) throws IOException {
         else langto1.setText(null);
 }
 
-public void setLangto2(ActionEvent event) throws IOException {
+public void setLangto2() throws IOException {
     langTo.getSelectionModel().select(tab3);
     Translator translator = new Translator();
     if (!wordFind.getText().isEmpty()) {
@@ -77,13 +79,39 @@ public void setLangto2(ActionEvent event) throws IOException {
     else langto2.setText(null);
 }
 
-    public void setLangto3(ActionEvent event) throws IOException {
+    public void setLangto3() throws IOException {
         langTo.getSelectionModel().select(tab4);
         Translator translator = new Translator();
         if (!wordFind.getText().isEmpty()) {
             langto3.setText(translator.translate("", "ko", wordFind.getText()));
         }
         else langto3.setText(null);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        langTo.getSelectionModel().selectedItemProperty().addListener((observableValue, oldTab, newTab) -> {
+            if (newTab == tab2) {
+                try {
+                    setLangto1();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else if (newTab == tab3) {
+                try {
+                    setLangto2();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else if (newTab == tab4) {
+                try {
+                    setLangto3();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
     }
 }
 

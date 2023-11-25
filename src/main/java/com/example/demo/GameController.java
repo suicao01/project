@@ -184,7 +184,7 @@ public class GameController extends Controller implements Initializable {
     public void setAnswer() throws IOException {
         Translator translator = new Translator();
         for (int i = 0; i < temp.size(); i++) {
-            choice.add(translator.translate("", "vi", temp.get(i)));
+            choice.add(translator.translate("en", "vi", temp.get(i)));
 
         }
         mean = choice.get(0);
@@ -266,12 +266,6 @@ public class GameController extends Controller implements Initializable {
         // Load sprite image
         Image[] sprite_dora = new Image[6];
 
-        sprite_dora[0] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora1.png");
-        sprite_dora[1] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora2.png");
-        sprite_dora[2] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora3.png");
-        sprite_dora[3] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora4.png");
-        sprite_dora[4] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora5.png");
-        sprite_dora[5] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora6.png");
 
         buttons = new Button[]{choice1, choice2, choice3, choice4};
         try {
@@ -286,14 +280,14 @@ public class GameController extends Controller implements Initializable {
 
 
 
-/*
+
         sprite_dora[0] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora1.png");
         sprite_dora[1] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora2.png");
         sprite_dora[2] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora3.png");
         sprite_dora[3] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora4.png");
         sprite_dora[4] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora5.png");
         sprite_dora[5] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora6.png");
-*/
+
 
         final int[] index = {0};
 
