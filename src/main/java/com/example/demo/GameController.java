@@ -1,48 +1,33 @@
 package com.example.demo;
 
 
-import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
+import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
-
-
-
-
-
-import javafx.animation.PauseTransition;
-
-import javafx.application.Platform;
-
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-
-import javafx.scene.control.Label;
-
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collections;
-
+import java.util.ResourceBundle;
 import java.util.Set;
 
 public class GameController extends Controller implements Initializable {
+    public Label timer;
     TranslateTransition trans = new TranslateTransition();
 
     public Label question;
@@ -90,13 +75,19 @@ public class GameController extends Controller implements Initializable {
     }
 
     //hien diem so
-    public void ScoreResult() {
+    public void ScoreResult(ActionEvent event) {
         Platform.runLater(() -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Quiz Score");
             alert.setHeaderText(null);
             alert.setContentText("Your score: " + score + "/10");
-            alert.showAndWait();
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                try {
+                    switchToMenuScene(event);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         });
 
     }
@@ -168,7 +159,7 @@ public class GameController extends Controller implements Initializable {
                             setQuestion();
                             setAnswer();
                         } else {
-                            ScoreResult();
+                            ScoreResult(event);
                         }
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
@@ -238,6 +229,34 @@ public class GameController extends Controller implements Initializable {
         trans.play();
     }
 
+    public void setTimer() {
+
+        ObjectProperty<java.time.Duration> remainingDuration
+                = new SimpleObjectProperty<>(java.time.Duration.ofSeconds(180));
+
+        // time format (hh:mm:ss)
+        timer.textProperty().bind(Bindings.createStringBinding(() ->
+                        String.format("Time: %02d:%02d:%02d",
+                                remainingDuration.get().toHours(),
+                                remainingDuration.get().toMinutesPart(),
+                                remainingDuration.get().toSecondsPart()),
+                remainingDuration));
+
+        // lower remaining duration every second:
+        Timeline countDownTimeLine = new Timeline(new KeyFrame(Duration.seconds(1), (ActionEvent event) ->
+                remainingDuration.setValue(remainingDuration.get().minus(1, ChronoUnit.SECONDS))));
+
+        // Set number of cycles (remaining duration in seconds):
+        countDownTimeLine.setCycleCount((int) remainingDuration.get().getSeconds());
+
+        // Show alert when time is up
+        countDownTimeLine.setOnFinished(this::ScoreResult);
+
+
+        // Start the time line
+        countDownTimeLine.play();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -269,7 +288,7 @@ public class GameController extends Controller implements Initializable {
 
         buttons = new Button[]{choice1, choice2, choice3, choice4};
         try {
-
+            setTimer();
             setQuestion();
             setAnswer();
             switchQuestion();
