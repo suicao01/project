@@ -54,7 +54,9 @@ public class HistoryController extends Controller implements Initializable {
             try {
                 Collections.reverse(addW());
                 if (addW().isEmpty()) {
+
                    noWordSearch.setText("Không có lịch sử tìm kiếm nào!");
+
                    listWord.setVisible(false);
                    definition.setVisible(false);
                 }
@@ -89,7 +91,9 @@ public class HistoryController extends Controller implements Initializable {
             writer.close();
             listWord.setVisible(false);
             showWord.setVisible(false);
+
             noWordSearch.setText("Không có lịch sử tìm kiếm nào!");
+
             definition.setVisible(false);
         }
 

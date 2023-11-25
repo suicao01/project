@@ -1,36 +1,60 @@
 package com.example.demo;
 
+
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
-import javafx.animation.PauseTransition;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
+import javafx.animation.TranslateTransition;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
-
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
+
+
+
+
+import javafx.animation.PauseTransition;
+
+import javafx.application.Platform;
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+
+import javafx.scene.control.Label;
+
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.ResourceBundle;
+
 import java.util.Set;
 
 public class GameController extends Controller implements Initializable {
+    TranslateTransition trans = new TranslateTransition();
 
     public Label question;
     public Button choice1;
     public Button choice4;
     public Button choice2;
     public Button choice3;
+
     public Label number;
+
+    @FXML
+    private Label score_label;
 
     //============ GAME ===========
     @FXML
@@ -39,6 +63,15 @@ public class GameController extends Controller implements Initializable {
     @FXML
     private AnchorPane pane_game;
     //=================================
+
+
+    //----------------score bar--------------
+    @FXML
+    private ProgressBar score_bar;
+
+    //-----------------------------------------
+
+
     static String word;
     static String mean;
     ArrayList<String> choice = new ArrayList<>();
@@ -46,7 +79,7 @@ public class GameController extends Controller implements Initializable {
 
     public Button[] buttons;
     static int score = 0;
-    private int switchCount =1;
+    private int switchCount = 1;
 
     //lay random tu trong mang
     private String getRandomWord() throws IOException {
@@ -62,11 +95,12 @@ public class GameController extends Controller implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Quiz Score");
             alert.setHeaderText(null);
-            alert.setContentText("Your score: " + score +"/10");
+            alert.setContentText("Your score: " + score + "/10");
             alert.showAndWait();
         });
 
     }
+
     //hien cau hoi
     public void setQuestion() throws IOException {
         for (int i = 0; i < 4; i++) {
@@ -94,6 +128,7 @@ public class GameController extends Controller implements Initializable {
             if (isCorrect(buttons[i])) {
 
                 buttons[i].setStyle("-fx-background-color: red;");
+
             }
         }
     }
@@ -113,9 +148,11 @@ public class GameController extends Controller implements Initializable {
             buttons[i].setOnAction(event -> {
                 // Change color of correct button first
                 changeColor();
-           if (isCorrect(buttons[finalI])) {
-               score++;
-           }
+                if (isCorrect(buttons[finalI])) {
+                    score++;
+                    score_label.setText("SCORE: "+ score +"/10");
+                    check_Position_Dora(score);
+                }
                 // Delay the quiz switch for a few seconds
                 PauseTransition pause = new PauseTransition(Duration.seconds(1));
                 pause.setOnFinished(e -> {
@@ -126,13 +163,12 @@ public class GameController extends Controller implements Initializable {
                         temp.clear();
                         switchCount++;
                         // Switch to another quiz
-                        if (switchCount<=10) {
+                        if (switchCount <= 10) {
                             number.setText("Câu " + switchCount);
                             setQuestion();
                             setAnswer();
-                        }
-                        else{
-                     ScoreResult();
+                        } else {
+                            ScoreResult();
                         }
                     } catch (IOException ex) {
                         throw new RuntimeException(ex);
@@ -162,8 +198,81 @@ public class GameController extends Controller implements Initializable {
     }
 
 
+    public void check_Position_Dora(int score) {
+
+/*
+        // 42 width dora /2
+        if (score == 1) {
+            score_bar.setProgress(0.1);
+            trans.setByX(46);// 88 - 42
+        } else if (score == 2) {
+            score_bar.setProgress(0.2);
+            trans.setByX(70); // 88 + 70 - 42*2 116 -42
+        } else if (score == 3) {
+            score_bar.setProgress(0.3);
+            trans.setByX(70); // 228 - 42 - 42 - 42 - 42
+        } else if (score == 4) {
+            score_bar.setProgress(0.4);
+            trans.setByX(298 - 42*5);
+        } else if (score == 5) {
+            score_bar.setProgress(0.5);
+            trans.setByX(368 - 42);
+        }
+*/
+
+        if(score <= 10) {
+            for (int i = 1; i <=10;i++)
+            {
+                if (score == i) {
+                    score_bar.setProgress(0.1*i);
+                    if (i == 1) { trans.setByX(46); }
+                    else {trans.setByX(70);}
+                }
+            }
+        }
+
+
+//        score_bar.setProgress(0.1*10);
+//        //trans.setByX(42 + 70*2);
+//        trans.setByX(42 + 70*9);
+        trans.play();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+
+        //---------------score bar -------------------------
+
+        // doi mau thanh score
+        score_bar.setStyle("-fx-accent:#0affee");
+        score_bar.setProgress(0);
+    /* khi next 1 cau dung thi count_score tang len 0.1 = 10/100 thanh score
+    double count_score; =>> k bi 0.9999 ma la 1 : BigDecimal count_score
+   if(count_score < 1) {
+    count_score += 0.1;
+    score_bar.setProgress(count_score); thi thanh se tang
+
+
+    // lay ra diem 10,20,30,...
+    Label.setText(Integer.toString((int)Math.round(count_score*100)))
+    ]
+
+     */
+        //--------------------------------------------------
+
+
+        //----------------dora animation -------------------------------
+        // Load sprite image
+        Image[] sprite_dora = new Image[6];
+
+        sprite_dora[0] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora1.png");
+        sprite_dora[1] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora2.png");
+        sprite_dora[2] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora3.png");
+        sprite_dora[3] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora4.png");
+        sprite_dora[4] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora5.png");
+        sprite_dora[5] = new Image("file:E:\\GITHUB\\project\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora6.png");
+
         buttons = new Button[]{choice1, choice2, choice3, choice4};
         try {
 
@@ -175,15 +284,16 @@ public class GameController extends Controller implements Initializable {
         }
 
 
-        // Load sprite image
-        Image[] sprite_dora = new Image[6];
 
+
+/*
         sprite_dora[0] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora1.png");
         sprite_dora[1] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora2.png");
         sprite_dora[2] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora3.png");
         sprite_dora[3] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora4.png");
         sprite_dora[4] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora5.png");
         sprite_dora[5] = new Image("C:\\Users\\Admin\\IdeaProjects\\project-Nh\\src\\main\\resources\\com\\example\\demo\\backgroundGame\\dora\\dora6.png");
+*/
 
         final int[] index = {0};
 
@@ -191,8 +301,10 @@ public class GameController extends Controller implements Initializable {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0.13), e -> {
                     if (index[0] > 5) {
+
                         index[0] = 0;
                     } else {
+
                         index[0] = (index[0] + 1) % sprite_dora.length;
                     }
 
@@ -202,10 +314,22 @@ public class GameController extends Controller implements Initializable {
 
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play(); // Start animation
+
+        //---------------------------------------------------------------------
+
+
+        // move dora
+
+
+        trans.setNode(dora_run);
+        trans.setDuration(Duration.seconds(1));
+
+
+        trans.play();
     }
 
-}
 
+}
 
 
 

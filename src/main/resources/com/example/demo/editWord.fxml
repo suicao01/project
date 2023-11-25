@@ -13,7 +13,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ControllerEditWord">
+
    <children>
       <ImageView fitHeight="526.0" fitWidth="909.0" layoutX="-140.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -77,14 +79,16 @@
             <Image url="@background%20edit%20word/sky4.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="351.0" fitWidth="573.0" layoutX="-218.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+
+      <ImageView fitHeight="244.0" fitWidth="307.0" layoutX="-23.0" layoutY="265.0" pickOnBounds="true" rotate="-12.3">
          <image>
-            <Image url="@background%20edit%20word/dora_cam_bang_3.png" />
+            <Image url="@background%20edit%20word/cam_bang.png" />
          </image>
       </ImageView>
-      <Button fx:id="buttonSave" layoutX="58.0" layoutY="241.0" mnemonicParsing="false" onAction="#replace" prefHeight="69.0" prefWidth="163.0" text="SAVE" textFill="#0c5cad">
+      <Button fx:id="buttonSave" layoutX="32.0" layoutY="280.0" mnemonicParsing="false" onAction="#replace" prefHeight="113.0" prefWidth="229.0" styleClass="button1" stylesheets="@Edit.css" text="SAVE" textFill="#0080ff">
          <font>
-            <Font name="System Bold" size="31.0" />
+            <Font name="Britannic Bold" size="64.0" />
+
          </font>
       </Button>
       <Button fx:id="buttonBackFind" contentDisplay="CENTER" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="43.0" prefWidth="71.0" text=" ">
@@ -120,5 +124,12 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
+
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-21.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@background%20edit%20word/sky4_1.png" />
+         </image>
+      </ImageView>
+
    </children>
 </AnchorPane>

@@ -49,7 +49,10 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
+
+
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller">
+
 
    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
       <children>
@@ -77,7 +80,9 @@
                <Font name="System Bold" size="23.0" />
             </font>
          </Label>
-         <TextField fx:id="search" layoutX="209.0" layoutY="13.0" onAction="#findWord" prefHeight="39.0" prefWidth="291.0" promptText="Type here to search">
+
+         <TextField fx:id="search" layoutX="209.0" layoutY="13.0" onAction="#findWord" onKeyReleased="#findWord" prefHeight="39.0" prefWidth="291.0" promptText="Type here to search">
+
             <font>
                <Font size="18.0" />
             </font></TextField>
@@ -263,6 +268,13 @@
                </ImageView>
             </graphic></Button>
          <ListView fx:id="suggested_Word_ListView" layoutX="105.0" layoutY="122.0" onMouseClicked="#ClickListView" prefHeight="358.0" prefWidth="200.0" />
+
+         <Label fx:id="thong_bao_search" alignment="CENTER" contentDisplay="CENTER" layoutX="228.0" layoutY="57.0" textFill="RED">
+            <font>
+               <Font name="System Bold" size="17.0" />
+            </font>
+         </Label>
+
       </children>
    </AnchorPane>
 </VBox>

@@ -8,6 +8,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 
+
 import java.io.IOException;
 
 public class ControllerTranslatorAPI extends Controller implements Initializable {
@@ -19,6 +20,7 @@ public class ControllerTranslatorAPI extends Controller implements Initializable
 
     @FXML
     public TextField langto3;
+
 
 
 

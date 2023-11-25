@@ -68,6 +68,11 @@ public class Controller implements Initializable  {
     @FXML
     private Button history;
 
+
+
+    @FXML
+    Label thong_bao_search;
+
     //============ GAME ===========
 //    @FXML
 //    private ImageView dora_run;
@@ -206,7 +211,9 @@ public class Controller implements Initializable  {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
         alert.setHeaderText(null);
+
         alert.setContentText("Bạn có muốn thoát chương trình?");
+
         if (alert.showAndWait().get() == ButtonType.OK) {
             stage = (Stage) ScenePane.getScene().getWindow();
             stage.close();
@@ -220,7 +227,9 @@ public class Controller implements Initializable  {
         String word = search.getText();
 
 
-        if (word.isEmpty()) {
+
+        if (word == null) {
+
             textMeaning.setText(null);
             meaning.setText(null);
             setSearchListViewItem();
@@ -234,6 +243,12 @@ public class Controller implements Initializable  {
             BufferedWriter bw = new BufferedWriter(new FileWriter(edit_word_path));
             bw.write(meaning.getText());
             voice.setVisible(true);
+
+        } else {
+            thong_bao_search.setVisible(true);
+            thong_bao_search.setText("Không tìm thấy từ này trong từ điển");
+            voice.setVisible(false);
+
         }
 
         int index = binaryLookup(0, get_key_list().size() - 1, word, get_key_list());
@@ -274,6 +289,8 @@ public class Controller implements Initializable  {
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
 
+            String css = String.valueOf(this.getClass().getResource("game.css"));
+            scene.getStylesheets().add(css);
 
             stage.setScene(scene);
             stage.show();
@@ -316,6 +333,13 @@ public class Controller implements Initializable  {
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+
+
+        String css = String.valueOf(this.getClass().getResource("Edit.css"));
+        scene.getStylesheets().add(css);
+
+
+
         stage.setScene(scene);
 
         stage.show();
