@@ -126,7 +126,7 @@ public class GameController extends Controller implements Initializable {
                         temp.clear();
                         switchCount++;
                         // Switch to another quiz
-                        if (switchCount<=1) {
+                        if (switchCount<=10) {
                             number.setText("Câu " + switchCount);
                             setQuestion();
                             setAnswer();
