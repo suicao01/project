@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="831af805-5bfb-4d19-852a-bed072f6ab9d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/com/example/demo/ControllerAddWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/com/example/demo/ControllerEditWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/com/example/demo/addWord.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/com/example/demo/editWord.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/com/example/demo/game.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../dtb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../dtb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/example/demo/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/example/demo/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/example/demo/Dictionary1.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/example/demo/Dictionary1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/example/demo/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/example/demo/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/com/example/demo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/com/example/demo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/com/example/demo/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/com/example/demo/l.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/com/example/demo/l.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/com/example/demo/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/com/example/demo/test.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2YWj7chJCOHlPBWhJgIJYPSRzG3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.google.cloudcode.ide_session_index": "20231122_0000",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/GITHUB/project"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="831af805-5bfb-4d19-852a-bed072f6ab9d" name="Changes" comment="" />
+      <created>1700648063931</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700648063931</updated>
+    </task>
+    <servers />
+  </component>
+</project>

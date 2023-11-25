@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ControllerTranslatorAPI">
+
+   <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="748.0" VBox.vgrow="ALWAYS">
+      <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" height="506.0" layoutX="-5.0" stroke="BLACK" strokeType="INSIDE" width="756.0">
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.12156862765550613" green="0.658823549747467" blue="1.0" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Rectangle>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="437.0" layoutX="77.0" layoutY="62.0" stroke="WHITE" strokeType="INSIDE" width="662.0">
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor></Rectangle>
+         <AnchorPane fx:id="ScenePane" layoutY="147.0" prefHeight="339.0" prefWidth="179.0">
+            <children>
+               <Button fx:id="export_to_file1" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="33.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial" size="12.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@1024px-Search_Icon.svg.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Button fx:id="export_to_file" contentDisplay="CENTER" layoutX="8.0" layoutY="95.0" mnemonicParsing="false" onAction="#switchToSceneAddWord" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial" size="12.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="32.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_add_word.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+               <Button fx:id="history" contentDisplay="CENTER" layoutX="8.0" layoutY="159.0" mnemonicParsing="false" onAction="#hisScreen" prefHeight="55.0" prefWidth="63.0" text=" ">
+                  <graphic>
+                     <ImageView fitHeight="39.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_history.png" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+               <Button fx:id="game" contentDisplay="CENTER" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" onAction="#switch_To_Scene_Game" prefHeight="55.0" prefWidth="63.0" text=" ">
+                  <graphic>
+                     <ImageView fitHeight="35.0" fitWidth="39.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_game.png" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+               <Button fx:id="exit" contentDisplay="CENTER" layoutX="8.0" layoutY="284.0" mnemonicParsing="false" onAction="#Logout" prefHeight="55.0" prefWidth="63.0" text=" ">
+                  <graphic>
+                     <ImageView fitHeight="37.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@icon_exit.png" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+               <Button fx:id="export_to_file11" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="-28.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial" size="12.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="31.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@Google_Translate_logo.svg.png" />
+                        </image>
+                     </ImageView>
+                  </graphic>
+               </Button>
+            </children>
+         </AnchorPane>
+         <ImageView fitHeight="103.0" fitWidth="124.0" layoutX="-5.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="667.0573272705078">
+            <image>
+               <Image url="@doraemon_read_book.png" />
+            </image>
+         </ImageView>
+         <Button fx:id="voice" layoutX="470.0" layoutY="130.0" mnemonicParsing="false" onAction="#Sound" prefHeight="12.0" prefWidth="43.0" visible="false" wrapText="true">
+            <graphic>
+               <ImageView fitHeight="18.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@background add word/95021.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <TabPane fx:id="langTo" layoutX="422.0" layoutY="130.0" prefHeight="218.0" prefWidth="292.0" tabClosingPolicy="UNAVAILABLE">
+           <tabs>
+             <Tab fx:id="tab2" text="Tiếng Việt">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="211.0" prefWidth="227.0">
+                        <children>
+                           <TextField fx:id="langto1" alignment="TOP_LEFT" layoutY="-5.0" onAction="#setLangto1" prefHeight="185.0" prefWidth="292.0">
+                              <font>
+                                 <Font name="Arial" size="18.0" />
+                              </font></TextField>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+             <Tab fx:id="tab3" text="Tiếng Anh">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TextField fx:id="langto2" alignment="TOP_LEFT" layoutY="-8.0" onAction="#setLangto2" prefHeight="189.0" prefWidth="292.0">
+                              <font>
+                                 <Font name="Arial" size="18.0" />
+                              </font>
+                           </TextField>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+               <Tab fx:id="tab4" text="Tiếng Hàn">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TextField fx:id="langto3" alignment="TOP_LEFT" layoutY="-7.0" onAction="#setLangto3" prefHeight="186.0" prefWidth="292.0">
+                              <font>
+                                 <Font name="Arial" size="18.0" />
+                              </font>
+                           </TextField>
+                        </children>
+                     </AnchorPane>
+                 </content>
+               </Tab>
+           </tabs>
+         </TabPane>
+         <TextField fx:id="wordFind" alignment="TOP_LEFT" layoutX="116.0" layoutY="159.0" onAction="#DetectLang" prefHeight="181.0" prefWidth="292.0">
+            <font>
+               <Font name="Arial" size="18.0" />
+            </font>
+         </TextField>
+         <Label layoutX="122.0" layoutY="135.0" text="Phát hiện ngôn ngữ" />
+      </children>
+   </AnchorPane>
+</VBox>
