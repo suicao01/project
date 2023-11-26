@@ -124,7 +124,7 @@
                               </image>
                            </ImageView>
                         </graphic></Button>
-                     <Button fx:id="export_to_file11" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="-28.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
+                     <Button fx:id="export_to_file11" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="-28.0" mnemonicParsing="false" onAction="#switch_API" prefHeight="55.0" prefWidth="63.0" text=" " textAlignment="CENTER">
                         <font>
                            <Font name="Arial" size="12.0" />
                         </font>

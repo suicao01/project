@@ -11,14 +11,14 @@
 <AnchorPane prefHeight="506.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameOverController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="506.0" stroke="BLACK" strokeType="INSIDE" width="748.0" />
-      <Button layoutX="254.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="43.0" prefWidth="228.0" text="Restart">
+      <Button layoutX="254.0" layoutY="277.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="43.0" prefWidth="222.0" styleClass="button-choice" stylesheets="@game.css" text="Restart" textFill="#0f668f">
          <font>
-            <Font size="18.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Button>
-      <Button layoutX="255.0" layoutY="334.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="43.0" prefWidth="222.0" text="Exit">
+      <Button layoutX="254.0" layoutY="351.0" mnemonicParsing="false" onAction="#switchToSceneSearch" prefHeight="43.0" prefWidth="222.0" styleClass="button-choice" stylesheets="@game.css" text="Exit" textFill="#0f668f">
          <font>
-            <Font size="18.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
          </font>
       </Button>
       <Label fx:id="result" alignment="CENTER" layoutX="199.0" layoutY="179.0" prefHeight="75.0" prefWidth="350.0" text="SCORE ">
@@ -36,7 +36,7 @@
             <Image url="@backgroundGame/khoc2.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="245.0" fitWidth="271.0" layoutX="477.0" layoutY="254.0" pickOnBounds="true">
+      <ImageView fitHeight="239.0" fitWidth="268.0" layoutX="477.0" layoutY="254.0" pickOnBounds="true">
          <image>
             <Image url="@backgroundGame/khoc1.gif" />
          </image>
