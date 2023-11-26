@@ -22,6 +22,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -53,6 +54,7 @@ public class Controller implements Initializable  {
     Scene scene;
     Parent root;
 
+    private static final String soundpath = "voice.wav";
     @FXML
     TextField search;
     @FXML
@@ -68,20 +70,13 @@ public class Controller implements Initializable  {
     @FXML
     private Button history;
 
-
+    @FXML
+    private TextFlow question_flow;
 
     @FXML
     Label thong_bao_search;
 
-    //============ GAME ===========
-//    @FXML
-//    private ImageView dora_run;
-//
-//
-//
-//    @FXML
-//    private AnchorPane pane_game;
-//=======================================
+
     private final String edit_word_path = "editWord.txt";
     private final String path = "history.txt";
 
@@ -187,12 +182,7 @@ public class Controller implements Initializable  {
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
 
-//    public void checkSeachField() throws IOException {
-//        String word = search.getText();
-//        int index = binaryLookup(0, get_key_list().size() - 1, word, get_key_list());
-//        updateWordInListView(word, index, get_key_list(),keyListView);
-//        setSearchListViewItem();
-//    }
+
 
     public void ClickListView() throws Exception {
         String wordInListView = suggested_Word_ListView.getSelectionModel().getSelectedItem();
@@ -240,6 +230,7 @@ public class Controller implements Initializable  {
         meaning.setText(getManage().getWordLookedUp(word));
         textMeaning.setText(getManage().dictionaryLookup(word));
         if (meaning.getText() != null) {
+            thong_bao_search.setVisible(false);
             BufferedWriter bw = new BufferedWriter(new FileWriter(edit_word_path));
             bw.write(meaning.getText());
             voice.setVisible(true);
@@ -261,6 +252,10 @@ public class Controller implements Initializable  {
 
     }
 
+    private void resize(Stage stage) {
+        stage.setWidth(764);
+        stage.setHeight(540);
+    }
     private Sound getSound() throws Exception {
         Sound s = new Sound();
         s.exportSound(meaning.getText(),"en-gb");
@@ -270,6 +265,7 @@ public class Controller implements Initializable  {
     public void switchToSceneSearch(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("l.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        resize(stage);
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -278,6 +274,7 @@ public class Controller implements Initializable  {
     public void switchToGuideScene(ActionEvent event) throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("guide.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        resize(stage);
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -293,6 +290,7 @@ public class Controller implements Initializable  {
             scene.getStylesheets().add(css);
 
             stage.setScene(scene);
+            resize(stage);
             stage.show();
         } catch(Exception e) {e.printStackTrace();e.getMessage();}
         //------------dora animation --------------
@@ -309,6 +307,7 @@ public class Controller implements Initializable  {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
+        resize(stage);
         stage.show();
     }
 
@@ -317,6 +316,7 @@ public class Controller implements Initializable  {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        resize(stage);
         stage.show();
     }
 
@@ -325,6 +325,7 @@ public class Controller implements Initializable  {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        resize(stage);
         stage.show();
     }
 
@@ -338,7 +339,7 @@ public class Controller implements Initializable  {
         String css = String.valueOf(this.getClass().getResource("Edit.css"));
         scene.getStylesheets().add(css);
 
-
+        resize(stage);
 
         stage.setScene(scene);
 
@@ -351,12 +352,13 @@ public class Controller implements Initializable  {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        resize(stage);
         stage.show();
     }
     public void Sound(ActionEvent event) throws Exception {
 
         if (!meaning.getText().isEmpty()) {
-         getSound().playSound();
+         getSound().playSound(soundpath);
         }
     }
 

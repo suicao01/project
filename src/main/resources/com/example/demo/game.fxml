@@ -11,6 +11,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane fx:id="pane_game" prefHeight="509.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.GameController">
    <children>
@@ -60,16 +61,12 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="671.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="54.0" text=" ">
+      <Button fx:id="SoundOn" alignment="CENTER" contentDisplay="CENTER" layoutX="671.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="54.0" text=" ">
          <font>
             <Font size="9.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="41.0" fitWidth="42.0" pickOnBounds="true">
-               <image>
-                  <Image url="@backgroundGame/volume_on.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="symbol" fitHeight="37.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Button>
       <Label fx:id="timer" layoutX="518.0" layoutY="4.0" prefHeight="52.0" prefWidth="137.0" text="TIME: 00:00:60" textFill="WHITE">
@@ -82,10 +79,6 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Label>
-      <Label fx:id="question" layoutX="34.0" layoutY="278.0">
-         <font>
-            <Font name="Calibri Bold" size="20.0" />
-         </font></Label>
 
       <ImageView fx:id="dora_run" fitHeight="96.0" fitWidth="84.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -97,11 +90,11 @@
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="choice4" layoutX="398.0" layoutY="402.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="276.0" styleClass="button-choice" stylesheets="@game.css" textFill="#186bbe">
+      <Button fx:id="choice4" layoutX="395.0" layoutY="402.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="276.0" styleClass="button-choice" stylesheets="@game.css" textFill="#186bbe">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="choice2" layoutX="398.0" layoutY="337.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="276.0" styleClass="button-choice" stylesheets="@game.css" textFill="#186bbe">
+      <Button fx:id="choice2" layoutX="395.0" layoutY="337.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="276.0" styleClass="button-choice" stylesheets="@game.css" textFill="#186bbe">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font></Button>
@@ -111,9 +104,10 @@
          </font></Button>
       <Label fx:id="score_label" layoutX="97.0" layoutY="4.0" prefHeight="52.0" prefWidth="137.0" text="SCORE: 0/10" textFill="WHITE">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="19.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="25.0" />
          </font>
       </Label>
+      <TextFlow fx:id="question_flow" layoutX="37.0" layoutY="270.0" prefHeight="45.0" prefWidth="683.0" />
 
    </children>
 </AnchorPane>

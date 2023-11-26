@@ -36,12 +36,10 @@ public class Sound {
     }
 
     //doc file sound
-    public void playSound(){
-
-        String strFilename = soundpath;
+    public void playSound(String path){
 
         try {
-            soundFile = new File(strFilename);
+            soundFile = new File(path);
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);

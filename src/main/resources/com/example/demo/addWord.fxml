@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ControllerAddWord">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ControllerAddWord">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="508.0" stroke="BLACK" strokeType="INSIDE" width="759.0">
          <fill>
@@ -68,7 +68,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="game" contentDisplay="CENTER" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" onAction="#switch_To_Scene_Game" prefHeight="55.0" prefWidth="63.0" text=" ">
+            <Button fx:id="game" contentDisplay="CENTER" layoutX="8.0" layoutY="221.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="55.0" prefWidth="63.0" text=" ">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="39.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>

@@ -1,16 +1,12 @@
 package com.example.demo;
 
-import com.voicerss.tts.*;
-import com.voicerss.tts.AudioFormat;
-
-import javax.sound.sampled.*;
-import java.io.*;
-import java.lang.reflect.Array;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Scanner;
 
 public class DictionaryManagement extends Dictionary1 {
 

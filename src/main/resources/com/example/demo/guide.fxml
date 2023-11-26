@@ -5,20 +5,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.MenuGame">
 
    <children>
       <ImageView fitHeight="517.0" fitWidth="752.0">
          <image>
-            <Image url="@background%20game/BGROUND%20GAME/khac/Screenshot%202023-11-17%20124223.png" />
+            <Image url="@backgroundGame/403636688_882304626449458_6066838694694140817_n.jpg" />
          </image>
       </ImageView>
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="18.0" layoutY="13.0" mnemonicParsing="false" onAction="#switchToMenuScene" prefHeight="50.0" prefWidth="61.0" text=" ">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="48.0" nodeOrientation="INHERIT" pickOnBounds="true">
                <image>
-                  <Image url="@background%20game/back.png" />
+                  <Image url="@backgroundGame/back.png" />
                </image>
             </ImageView>
          </graphic>
