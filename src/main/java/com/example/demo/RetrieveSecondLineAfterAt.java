@@ -42,6 +42,8 @@ public class RetrieveSecondLineAfterAt {
             e.printStackTrace();
         }
         dictionary1.getWordList().entrySet().removeIf(entry -> entry.getValue().getWord_explain().isEmpty());
+                dictionary1.getWordList().entrySet().removeIf(entry -> entry.getValue().getWord_explain().equals("("));
+
       return dictionary1.getWordList();
     }
 
